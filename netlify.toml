@@ -47,3 +47,20 @@
   for = "/favicon.svg"
   [headers.values]
     Cache-Control = "public, max-age=2592000"
+
+# ==========================================================================
+# Cabeceras de seguridad (SEC-01/02) — aplican a todas las respuestas.
+# CSP: script-src 'self' (sin inline JS; el JSON-LD es datos, no se ejecuta).
+# style-src incluye 'unsafe-inline' porque la landing usa estilos inline
+# (style="...") y el <style> de las páginas legales. frame-src permite solo
+# el reproductor de youtube-nocookie (facade). Sin recursos de terceros.
+# ==========================================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-src https://www.youtube-nocookie.com; upgrade-insecure-requests"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=()"
+    Strict-Transport-Security = "max-age=31536000"
