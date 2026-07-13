@@ -11,16 +11,23 @@
 
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:50;background:#0D352E;border-bottom:1px solid rgba(221,255,240,.14)">
-    <div class="mw-container" style="padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px">
-      <a href="#top" style="display:flex;align-items:center;flex:0 0 auto"><img src="assets/logo-green.jpg" alt="MentorWallet" style="height:75px;width:auto;display:block"></a>
-      <nav style="display:flex;align-items:center;gap:34px">
+    <div class="mw-container mw-header" style="padding:14px 24px">
+      <a class="mw-logo" href="#top" aria-label="MentorWallet — inicio"><img src="assets/logo-green.jpg" alt="MentorWallet"></a>
+      <nav class="mw-nav" aria-label="Navegación principal">
         <a class="mw-navlink" href="#producto">Beneficios</a>
         <a class="mw-navlink" href="#clientes">Clientes</a>
         <a class="mw-navlink" href="#fundae">Bonificable por FUNDAE</a>
       </nav>
-      <div style="display:flex;align-items:center;gap:14px">
-        <a class="mw-btn mw-btn--accent mw-btn--sm" href="#demo"><span>Contacta con nosotros</span></a>
-      </div>
+      <a class="mw-btn mw-btn--accent mw-btn--sm mw-header__cta" href="#demo"><span>Contacta con nosotros</span></a>
+      <details class="mw-menu">
+        <summary aria-label="Abrir menú de navegación"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></summary>
+        <nav class="mw-menu__panel" aria-label="Navegación móvil">
+          <a class="mw-navlink" href="#producto">Beneficios</a>
+          <a class="mw-navlink" href="#clientes">Clientes</a>
+          <a class="mw-navlink" href="#fundae">Bonificable por FUNDAE</a>
+          <a class="mw-btn mw-btn--accent mw-btn--sm" href="#demo"><span>Contacta con nosotros</span></a>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -33,7 +40,7 @@
           <svg viewBox="0 0 130 132" fill="currentColor" style="width:15px;height:15px;color:var(--fluor-300)"><rect x="4" y="6" width="28" height="28" rx="8"></rect><rect x="51" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="53" width="28" height="28" rx="8"></rect><rect x="98" y="100" width="28" height="28" rx="8"></rect></svg>
           <span style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--fluor-300)">MentorWallet para empresas</span>
         </div>
-        <p class="mw-eyebrow" style="color:var(--fluor-300)">Qué es MentorWallet</p><h1 style="font-size:58px;line-height:1.04;letter-spacing:-0.022em;font-weight:700;color:var(--mw-mint);margin:0 0 22px;max-width:13ch">Bienestar financiero para tus empleados.</h1>
+        <p class="mw-eyebrow" style="color:var(--fluor-300)">Qué es MentorWallet</p><h1 style="font-size:clamp(38px,7vw,58px);line-height:1.04;letter-spacing:-0.022em;font-weight:700;color:var(--mw-mint);margin:0 0 22px;max-width:13ch">Bienestar financiero para tus empleados.</h1>
         <p style="font-size:21px;line-height:1.5;color:var(--mw-mint);max-width:520px;margin:0 0 12px;font-weight:500">Menos estrés financiero. Más bienestar, más productividad, más foco.</p>
         <p style="font-size:16px;line-height:1.6;color:var(--text-on-dark-muted);max-width:520px;margin:0 0 34px">Programa de bienestar financiero personalizado para tus empleados. Para que puedan dormir tranquilos.</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:34px">
@@ -93,7 +100,7 @@
     <div class="mw-container" style="padding:96px 24px">
       <div style="max-width:680px;margin-bottom:48px">
         <p class="mw-eyebrow" style="color:var(--green-600)">El problema</p>
-        <h2 style="font-size:40px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0;text-wrap:balance">El problema no es la falta de talento. Es el estrés financiero.</h2>
+        <h2 style="font-size:clamp(28px,5vw,40px);line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0;text-wrap:balance">El problema no es la falta de talento. Es el estrés financiero.</h2>
       </div>
       <div class="problem-grid">
         <div style="background:var(--color-bg-subtle);border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:16px">
@@ -123,7 +130,7 @@
     <div class="mw-container" style="padding:96px 24px">
       <div style="max-width:680px;margin-bottom:18px">
         <p class="mw-eyebrow" style="color:var(--green-600)">Por qué importa</p>
-        <h2 style="font-size:40px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0">Beneficios para tu empresa.</h2>
+        <h2 style="font-size:clamp(28px,5vw,40px);line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0">Beneficios para tu empresa.</h2>
       </div>
       <p style="font-size:19px;line-height:1.6;color:var(--text-body);margin:0 0 48px">MentorWallet convierte el bienestar financiero en un beneficio con impacto real para tus empleados: genera hábitos, confianza y tranquilidad de forma continua.</p>
       <div class="benefits-grid">
@@ -152,7 +159,7 @@
       <div style="display:grid;grid-template-columns:1fr;gap:64px">
         <div>
           <p class="mw-eyebrow" style="color:var(--green-600)">Bonificable por FUNDAE</p>
-          <h2 style="font-size:40px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0 0 18px">Recupera parte del coste. MentorWallet es bonificable por FUNDAE.</h2>
+          <h2 style="font-size:clamp(28px,5vw,40px);line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0 0 18px">Recupera parte del coste. MentorWallet es bonificable por FUNDAE.</h2>
           <p style="font-size:18px;line-height:1.6;color:var(--text-body);margin:0 0 28px">Las empresas pueden recuperar total o parcialmente el coste de MentorWallet a través de las bonificaciones de FUNDAE. Más bienestar para tus empleados, menos coste para tu empresa.</p>
 
         </div>
@@ -166,7 +173,7 @@
     <div class="mw-container demo-grid" style="position:relative;padding:96px 24px">
       <div>
         <p class="mw-eyebrow" style="color:var(--fluor-300)">Contacta con nosotros</p>
-        <h2 style="font-size:42px;line-height:1.1;letter-spacing:-0.02em;font-weight:700;color:var(--mw-mint);margin:0 0 18px">Empieza a cuidar las finanzas de tu equipo.</h2>
+        <h2 style="font-size:clamp(30px,5vw,42px);line-height:1.1;letter-spacing:-0.02em;font-weight:700;color:var(--mw-mint);margin:0 0 18px">Empieza a cuidar las finanzas de tu equipo.</h2>
         <p style="font-size:18px;line-height:1.6;color:var(--text-on-dark-muted);margin:0 0 28px">En una reunión de 20 minutos te enseñamos cómo funciona MentorWallet, el panel de RR. HH. y cómo podría implantarse en tu empresa.</p>
         <div style="display:flex;flex-direction:column;gap:14px">
           <div style="display:flex;align-items:center;gap:11px;color:var(--green-300);font-size:16px"><svg viewBox="0 0 24 24" fill="none" stroke="var(--fluor-300)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><polyline points="20 6 9 17 4 12"/></svg>Reunión de 20 minutos</div>
@@ -212,7 +219,7 @@
   <section style="background:#fff;border-bottom:1px solid var(--border-subtle)">
     <div class="mw-container" style="padding:72px 24px">
       <p class="mw-eyebrow" style="color:var(--green-600)">Credenciales</p>
-      <h2 style="font-size:36px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0 0 40px">¿Por qué MentorWallet?</h2>
+      <h2 style="font-size:clamp(27px,4.6vw,36px);line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0 0 40px">¿Por qué MentorWallet?</h2>
       <div class="credentials-grid">
         <div style="background:var(--surface-mint);border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:12px">
           <div style="width:40px;height:40px;border-radius:999px;background:var(--green-900);color:var(--fluor-300);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>

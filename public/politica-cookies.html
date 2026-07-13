@@ -13,10 +13,15 @@
   body { background: #fff; margin: 0; font-family: var(--font-primary); color: var(--text-body); }
   .mw-navlink { color: var(--mw-mint); font-size: 15px; font-weight: 500; text-decoration: none; opacity: .82; }
   .mw-navlink:hover { opacity: 1; }
-  table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 15px; }
+  .mw-table-wrap { overflow-x: auto; margin: 0 0 20px; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 640px; }
   th { background: var(--surface-mint); color: var(--text-strong); font-weight: 600; text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--border-subtle); }
   td { padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; color: var(--text-body); }
   tr:last-child td { border-bottom: none; }
+  @media (max-width: 600px) {
+    main { padding: 48px 20px 64px !important; }
+    h1 { font-size: clamp(30px, 8vw, 40px) !important; }
+  }
 </style>
 </head>
 <body>
@@ -47,6 +52,7 @@
 
     <h2 style="font-size:22px;font-weight:600;color:var(--text-strong);margin:40px 0 10px;letter-spacing:-.01em">3. Tabla de cookies</h2>
     <p style="font-size:16px;line-height:1.65;color:var(--text-body);margin:0 0 12px">A continuación se detallan las cookies utilizadas en mentorwallet.es:</p>
+    <div class="mw-table-wrap">
     <table>
       <thead><tr><th>Cookie</th><th>Proveedor</th><th>Tipo</th><th>Duración</th><th>Finalidad</th></tr></thead>
       <tbody>
@@ -57,6 +63,7 @@
         <tr><td>mw_cookie_consent</td><td>MentorWallet</td><td>Técnica</td><td>1 año</td><td>Recordar las preferencias de cookies del usuario</td></tr>
       </tbody>
     </table>
+    </div>
 
     <h2 style="font-size:22px;font-weight:600;color:var(--text-strong);margin:40px 0 10px;letter-spacing:-.01em">4. ¿Cómo gestionar las cookies?</h2>
     <h3 style="font-size:17px;font-weight:600;color:var(--text-strong);margin:22px 0 6px">A través del banner de cookies</h3>
