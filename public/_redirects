@@ -1,3 +1,15 @@
-/aviso-legal     /aviso-legal.html     200
-/politica-privacidad     /politica-privacidad.html     200
+# Dominio canónico: apex -> www (301)
+https://mentorwallet.es/*   https://www.mentorwallet.es/:splat   301!
+
+# URLs limpias: 301 desde la versión .html a la versión sin extensión
+/index.html                 /                        301!
+/aviso-legal.html           /aviso-legal             301!
+/politica-privacidad.html   /politica-privacidad     301!
+/politica-cookies.html      /politica-cookies        301!
+/gracias.html               /gracias                 301!
+
+# Servir el HTML real en la URL limpia (rewrite interno, 200)
+/aviso-legal          /aviso-legal.html          200
+/politica-privacidad  /politica-privacidad.html  200
 /politica-cookies     /politica-cookies.html     200
+/gracias              /gracias.html              200

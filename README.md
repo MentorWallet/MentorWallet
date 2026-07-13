@@ -67,6 +67,21 @@ HTML. Después, configurar la **notificación por email de nuevos envíos**:
 
 Esto no se puede fijar desde el repositorio; es configuración del panel.
 
+## SEO y metadatos
+
+- **Dominio canónico:** `https://www.mentorwallet.es` (con www). El `_redirects`
+  fuerza apex→www (301) y URLs limpias sin `.html` (301 desde `.html`, rewrite
+  200 a la versión limpia). Cada página incluye `<link rel="canonical">`.
+- **Metadatos:** `<title>`, `meta description`, Open Graph + Twitter Cards en
+  todas las páginas; JSON-LD (`Organization` + `WebSite`) en la home.
+- **Assets generados desde `assets/symbol.svg`:** `favicon.svg`,
+  `favicon-16/32.png`, `apple-touch-icon.png`, `icon-192/512.png`,
+  `site.webmanifest`. La imagen social `og-image.png` (1200×630) se generó con
+  el design system.
+- **Indexación:** `robots.txt` + `sitemap.xml` (URLs limpias). `404.html`
+  personalizada (Netlify la sirve automáticamente). `gracias.html` y `404.html`
+  van con `noindex`.
+
 ## Despliegue
 
 Netlify hace deploy continuo desde git. El directorio publicado es `public/`,
