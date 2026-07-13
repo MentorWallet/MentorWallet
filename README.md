@@ -94,6 +94,19 @@ Esto no se puede fijar desde el repositorio; es configuración del panel.
   corta + revalidación al no llevar hash en el nombre).
 - Transferencia inicial de la home ≈ **107 KB** (sin abrir el vídeo).
 
+## Seguridad
+
+- **Sin terceros:** todas las fuentes se autohospedan (Fustat + DM Mono en
+  WOFF2). No hay peticiones a Google Fonts, ni `new Function`, ni scripts de
+  terceros; el único JS es `js/form.js` (primera parte).
+- **Cabeceras** (`netlify.toml`, aplican a `/*`): CSP estricta
+  (`default-src 'self'`, `script-src 'self'`, `frame-src` solo
+  youtube-nocookie, `frame-ancestors 'none'`), `X-Content-Type-Options`,
+  `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` y HSTS
+  (`Strict-Transport-Security`, sin `preload` de momento).
+- `style-src` incluye `'unsafe-inline'` porque la página usa estilos inline;
+  el JS sí queda restringido a `'self'`.
+
 ## Despliegue
 
 Netlify hace deploy continuo desde git. El directorio publicado es `public/`,
