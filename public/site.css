@@ -16,6 +16,12 @@ html { scroll-behavior: smooth; }
 body { background: #fff; }
 #top { overflow-x: hidden; }
 
+/* A11Y-05 · Algunos tokens del DS no alcanzan 4.5:1 sobre fondos claros; los
+   oscurecemos a nivel de sitio (sin tocar el DS) para cumplir contraste AA:
+   - --text-muted  #74837C -> #54635C  (texto secundario sobre blanco)
+   - --status-positive #19A06B -> #12784E  (badge/delta en texto pequeño) */
+:root { --text-muted: #54635C; --status-positive: #12784E; }
+
 /* Contenedor central reutilizado por todas las secciones (el padding
    vertical, propio de cada sección, se mantiene en línea). */
 .mw-container { max-width: 1240px; margin-inline: auto; }
@@ -205,4 +211,35 @@ body { background: #fff; }
   .problem-grid    { grid-template-columns: 1fr; }
   .panel-stats     { grid-template-columns: 1fr; }   /* RESP-04: panel RRHH */
   .footer-grid     { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ==========================================================================
+   Accesibilidad (F5)
+   ========================================================================== */
+
+/* A11Y-03 · Skip link — visible solo al recibir foco */
+.mw-skip {
+  position: absolute; left: 12px; top: -80px; z-index: 100;
+  background: var(--fluor-300); color: var(--green-900);
+  padding: 10px 16px; border-radius: 10px;
+  font-family: var(--font-primary); font-weight: 600; text-decoration: none;
+  transition: top .15s var(--ease-standard);
+}
+.mw-skip:focus { top: 12px; outline: none; box-shadow: var(--focus-ring); }
+
+/* A11Y-06 · Foco visible reforzado en enlaces, botones e inputs
+   (además del :focus-visible global de base.css) */
+.mw-navlink:focus-visible,
+.mw-btn:focus-visible,
+.mw-menu > summary:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+
+/* A11Y-04 · Respetar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
