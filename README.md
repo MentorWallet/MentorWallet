@@ -82,6 +82,18 @@ Esto no se puede fijar desde el repositorio; es configuración del panel.
   personalizada (Netlify la sirve automáticamente). `gracias.html` y `404.html`
   van con `noindex`.
 
+## Rendimiento
+
+- **Fuentes:** Fustat en **WOFF2 subseteado a latin**, solo pesos 400/500/600/700
+  (~670 KB en 7 `.ttf` → ~38 KB en 4 `.woff2`). Preload de Regular y Bold.
+- **Logo:** `logo-green.webp` (~6 KB, antes JPG de ~147 KB); `width`/`height` en
+  todas las `<img>` para evitar CLS.
+- **Vídeo:** facade *click-to-load* — el iframe de `youtube-nocookie` solo se
+  carga al pulsar el póster (`js/form.js`). Nada de YouTube en la carga inicial.
+- **Caché:** cabeceras en `netlify.toml` (fuentes `immutable`; CSS/JS con caché
+  corta + revalidación al no llevar hash en el nombre).
+- Transferencia inicial de la home ≈ **107 KB** (sin abrir el vídeo).
+
 ## Despliegue
 
 Netlify hace deploy continuo desde git. El directorio publicado es `public/`,

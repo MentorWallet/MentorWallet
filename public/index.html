@@ -26,6 +26,8 @@
 <meta name="twitter:title" content="MentorWallet — Bienestar financiero para tus empleados">
 <meta name="twitter:description" content="Menos estrés financiero. Más bienestar, más productividad, más foco. Bonificable por FUNDAE.">
 <meta name="twitter:image" content="https://www.mentorwallet.es/og-image.png">
+<link rel="preload" href="/_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/assets/fonts/Fustat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/assets/fonts/Fustat-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/styles.css">
 <link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
@@ -70,7 +72,7 @@
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:50;background:#0D352E;border-bottom:1px solid rgba(221,255,240,.14)">
     <div class="mw-container mw-header" style="padding:14px 24px">
-      <a class="mw-logo" href="#top" aria-label="MentorWallet — inicio"><img src="assets/logo-green.jpg" alt="MentorWallet"></a>
+      <a class="mw-logo" href="#top" aria-label="MentorWallet — inicio"><img src="assets/logo-green.webp" alt="MentorWallet" width="209" height="75"></a>
       <nav class="mw-nav" aria-label="Navegación principal">
         <a class="mw-navlink" href="#producto">Beneficios</a>
         <a class="mw-navlink" href="#clientes">Clientes</a>
@@ -179,8 +181,13 @@
         </div>
       </div>
       <p style="font-size:18px;font-weight:500;color:var(--text-body);margin:0 0 20px">En menos de 1 minuto, descubre cómo MentorWallet ayuda a tus empleados a reducir el estrés financiero.</p>
-      <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg)">
-        <iframe src="https://www.youtube-nocookie.com/embed/ivEXYYuejAQ?rel=0&modestbranding=1" title="MentorWallet — vídeo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>
+      <div class="mw-video" style="position:relative;width:100%;aspect-ratio:16/9;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg)">
+        <button type="button" class="mw-video__btn" data-video-id="ivEXYYuejAQ" data-video-title="MentorWallet — vídeo" aria-label="Reproducir el vídeo de MentorWallet (se carga desde YouTube al pulsar)">
+          <img class="mw-video__poster" src="assets/video-poster.webp" alt="" width="1280" height="720" loading="lazy">
+          <span class="mw-video__play" aria-hidden="true">
+            <svg viewBox="0 0 68 48" aria-hidden="true"><path class="mw-video__play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+          </span>
+        </button>
       </div>
     </div>
   </section>
@@ -308,7 +315,7 @@
     <div class="mw-container" style="padding:64px 24px 40px">
       <div class="footer-grid">
         <div>
-          <img src="assets/logo-green.jpg" alt="MentorWallet" style="height:75px;width:auto;margin-bottom:16px">
+          <img src="assets/logo-green.webp" alt="MentorWallet" width="209" height="75" style="height:75px;width:auto;margin-bottom:16px">
           <p style="font-size:15px;line-height:1.55;color:var(--text-on-dark-muted);max-width:30ch;margin:0">Educación financiera personalizada para tus empleados. Para que empiecen a dormir tranquilos.</p>
         </div>
         <div>

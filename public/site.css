@@ -243,3 +243,17 @@ body { background: #fff; }
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   Facade de vídeo (PERF-03) — el iframe de YouTube solo se carga al pulsar
+   ========================================================================== */
+.mw-video__btn { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: var(--green-900); display: block; }
+.mw-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.mw-video__play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transition: transform var(--dur-fast) var(--ease-standard); }
+.mw-video__play svg { width: 72px; height: auto; filter: drop-shadow(0 2px 8px rgba(7,33,28,.4)); }
+.mw-video__play-bg { fill: #212121; opacity: .85; transition: fill var(--dur-fast); }
+.mw-video__btn:hover .mw-video__play-bg,
+.mw-video__btn:focus-visible .mw-video__play-bg { fill: #C8443A; opacity: 1; }
+.mw-video__btn:hover .mw-video__play { transform: scale(1.06); }
+.mw-video__btn:focus-visible { outline: none; box-shadow: inset 0 0 0 3px var(--fluor-300); }
+.mw-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

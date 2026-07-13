@@ -78,3 +78,27 @@
       });
   });
 })();
+
+/* ==========================================================================
+   Facade de vídeo (PERF-03): carga el iframe de YouTube (youtube-nocookie)
+   solo cuando el usuario pulsa el póster. Nada de YouTube se carga antes.
+   ========================================================================== */
+(function () {
+  'use strict';
+  var btn = document.querySelector('.mw-video__btn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var wrap = btn.closest('.mw-video');
+    var id = btn.getAttribute('data-video-id');
+    var title = btn.getAttribute('data-video-title') || 'Vídeo';
+    if (!wrap || !id) return;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?rel=0&modestbranding=1&autoplay=1';
+    iframe.title = title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.setAttribute('allowfullscreen', '');
+    wrap.innerHTML = '';
+    wrap.appendChild(iframe);
+    iframe.focus();
+  });
+})();
