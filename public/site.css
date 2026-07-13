@@ -161,3 +161,48 @@ body { background: #fff; }
 .mw-stat__delta--down { color: var(--status-negative); }
 .mw-stat__delta--flat { color: var(--text-muted); }
 .mw-stat__caption { font-family: var(--font-primary); font-size: var(--fs-caption); color: var(--text-muted); margin-left: 4px; }
+
+/* ==========================================================================
+   Cabecera y navegación (RESP-03)
+   ========================================================================== */
+.mw-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.mw-logo { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.mw-logo img { height: 75px; width: auto; display: block; }
+.mw-nav { display: flex; align-items: center; gap: 34px; }
+
+/* Menú móvil (disclosure nativo <details>, sin JS) — oculto en escritorio */
+.mw-menu { display: none; position: relative; }
+.mw-menu > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; color: var(--mw-mint); }
+.mw-menu > summary::-webkit-details-marker { display: none; }
+.mw-menu > summary svg { width: 24px; height: 24px; }
+.mw-menu[open] > summary { background: rgba(221, 255, 240, .1); }
+.mw-menu__panel { position: absolute; right: 0; top: calc(100% + 10px); min-width: 230px; background: #0D352E; border: 1px solid rgba(221, 255, 240, .16); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px; box-shadow: var(--shadow-lg); z-index: 60; }
+.mw-menu__panel .mw-navlink { padding: 11px 12px; border-radius: 9px; }
+.mw-menu__panel .mw-navlink:hover { background: rgba(221, 255, 240, .08); }
+.mw-menu__panel .mw-btn { margin-top: 8px; }
+
+/* ==========================================================================
+   Responsive — colapso de rejillas y navegación (RESP-01/03/04)
+   Breakpoints: 900px (tablet) y 600px (móvil)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero-grid       { grid-template-columns: 1fr; gap: 44px; }
+  .demo-grid       { grid-template-columns: 1fr; gap: 44px; }
+  .benefits-grid   { grid-template-columns: 1fr 1fr; }
+  .credentials-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Navegación compacta: por debajo de 820px, hamburguesa + logo reducido */
+@media (max-width: 820px) {
+  .mw-nav, .mw-header__cta { display: none; }
+  .mw-menu { display: block; }
+  .mw-logo img { height: 54px; }
+}
+
+@media (max-width: 600px) {
+  .benefits-grid   { grid-template-columns: 1fr; }
+  .credentials-grid{ grid-template-columns: 1fr; }
+  .problem-grid    { grid-template-columns: 1fr; }
+  .panel-stats     { grid-template-columns: 1fr; }   /* RESP-04: panel RRHH */
+  .footer-grid     { grid-template-columns: 1fr; gap: 32px; }
+}
