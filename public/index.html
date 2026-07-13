@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/styles.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/tokens/fonts.css">
-<link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/tokens/colors.css">
-<link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/tokens/typography.css">
-<link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/tokens/spacing.css">
-<link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/tokens/base.css">
-<link rel="stylesheet" href="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/styles.css">
-<script src="_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/_ds_bundle.js"></script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { background: #fff; }
-  .mw-navlink { color: var(--mw-mint); font-size: 15px; font-weight: 500; text-decoration: none; opacity: .82; transition: opacity .14s; }
-  .mw-navlink:hover { opacity: 1; text-decoration: none; }
-</style>
-</helmet>
-
-<div id="top" style="background:#fff;font-family:var(--font-primary);overflow-x:hidden">
+<div id="top" style="background:#fff;font-family:var(--font-primary)">
 
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:50;background:#0D352E;border-bottom:1px solid rgba(221,255,240,.14)">
-    <div style="max-width:1240px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <div class="mw-container" style="padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px">
       <a href="#top" style="display:flex;align-items:center;flex:0 0 auto"><img src="assets/logo-green.jpg" alt="MentorWallet" style="height:75px;width:auto;display:block"></a>
       <nav style="display:flex;align-items:center;gap:34px">
         <a class="mw-navlink" href="#producto">Beneficios</a>
@@ -35,7 +19,7 @@
         <a class="mw-navlink" href="#fundae">Bonificable por FUNDAE</a>
       </nav>
       <div style="display:flex;align-items:center;gap:14px">
-        <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Button" variant="accent" size="sm" as="a" href="#demo" hint-size="auto,36px">Contacta con nosotros</x-import>
+        <a class="mw-btn mw-btn--accent mw-btn--sm" href="#demo"><span>Contacta con nosotros</span></a>
       </div>
     </div>
   </header>
@@ -43,21 +27,21 @@
   <!-- ============ HERO ============ -->
   <section style="position:relative;background:#0D352E;color:var(--text-on-dark);overflow:hidden">
     <svg viewBox="0 0 130 132" fill="currentColor" style="position:absolute;right:-90px;bottom:-120px;width:560px;height:auto;color:rgba(116,255,196,.07);pointer-events:none"><rect x="4" y="6" width="28" height="28" rx="8"></rect><rect x="51" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="53" width="28" height="28" rx="8"></rect><rect x="98" y="100" width="28" height="28" rx="8"></rect></svg>
-    <div style="position:relative;max-width:1240px;margin:0 auto;padding:84px 24px 100px;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center">
+    <div class="mw-container hero-grid" style="position:relative;padding:84px 24px 100px">
       <div>
         <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 14px 7px 11px;border-radius:999px;background:rgba(116,255,196,.12);border:1px solid rgba(116,255,196,.24);margin-bottom:26px">
           <svg viewBox="0 0 130 132" fill="currentColor" style="width:15px;height:15px;color:var(--fluor-300)"><rect x="4" y="6" width="28" height="28" rx="8"></rect><rect x="51" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="53" width="28" height="28" rx="8"></rect><rect x="98" y="100" width="28" height="28" rx="8"></rect></svg>
           <span style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--fluor-300)">MentorWallet para empresas</span>
         </div>
-        <p style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--fluor-300);margin:0 0 14px">Qué es MentorWallet</p><h1 style="font-size:58px;line-height:1.04;letter-spacing:-0.022em;font-weight:700;color:var(--mw-mint);margin:0 0 22px;max-width:13ch">Bienestar financiero para tus empleados.</h1>
+        <p class="mw-eyebrow" style="color:var(--fluor-300)">Qué es MentorWallet</p><h1 style="font-size:58px;line-height:1.04;letter-spacing:-0.022em;font-weight:700;color:var(--mw-mint);margin:0 0 22px;max-width:13ch">Bienestar financiero para tus empleados.</h1>
         <p style="font-size:21px;line-height:1.5;color:var(--mw-mint);max-width:520px;margin:0 0 12px;font-weight:500">Menos estrés financiero. Más bienestar, más productividad, más foco.</p>
         <p style="font-size:16px;line-height:1.6;color:var(--text-on-dark-muted);max-width:520px;margin:0 0 34px">Programa de bienestar financiero personalizado para tus empleados. Para que puedan dormir tranquilos.</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:34px">
-          <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Button" variant="accent" size="lg" as="a" href="#demo" hint-size="auto,52px">Contacta con nosotros</x-import>
+          <a class="mw-btn mw-btn--accent mw-btn--lg" href="#demo"><span>Contacta con nosotros</span></a>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:22px;color:var(--green-300);font-size:14px;font-weight:500">
-          <span style="display:inline-flex;align-items:center;gap:7px"><svg viewBox="0 0 24 24" fill="none" stroke="var(--fluor-300)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg>Bonificable por FUNDAE</span>
-          <span style="display:inline-flex;align-items:center;gap:7px"><svg viewBox="0 0 24 24" fill="none" stroke="var(--fluor-300)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg>Panel de RRHH</span>
+          <span class="mw-check"><svg viewBox="0 0 24 24" fill="none" stroke="var(--fluor-300)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg>Bonificable por FUNDAE</span>
+          <span class="mw-check"><svg viewBox="0 0 24 24" fill="none" stroke="var(--fluor-300)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg>Panel de RRHH</span>
 
         </div>
       </div>
@@ -67,11 +51,15 @@
         <div style="position:relative;background:#fff;border-radius:24px;box-shadow:0 32px 70px -16px rgba(7,33,28,.6);padding:24px;color:var(--text-body)">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
             <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Panel de RRHH</span>
-            <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Badge" variant="positive" dot="{{ true }}" hint-size="auto,22px">En vivo</x-import>
+            <span class="mw-badge mw-badge--positive mw-badge--dot">En vivo</span>
           </div>
           <h3 style="font-size:21px;font-weight:600;color:var(--text-strong);margin:0 0 18px">Impact Dashboard</h3>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
-            <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.StatCard" label="Participación" value="78%" size="sm" delta="+12%" delta-direction="up" delta-caption="trimestre" hint-size="100%,116px"></x-import>
+          <div class="panel-stats">
+            <div class="mw-stat mw-stat--sm">
+              <div class="mw-stat__top"><span class="mw-stat__label">Participación</span></div>
+              <div class="mw-stat__value">78%</div>
+              <div class="mw-stat__delta mw-stat__delta--up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg><span>+12%</span><span class="mw-stat__caption">trimestre</span></div>
+            </div>
             <div style="background:var(--color-bg-subtle);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px">
               <span style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)">Evolución del bienestar</span>
               <div style="display:flex;align-items:baseline;gap:8px">
@@ -89,10 +77,10 @@
           <div style="border-top:1px solid var(--border-subtle);padding-top:16px">
             <div style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:10px">Temas más vistos esta semana</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Badge" variant="brand" hint-size="auto,24px">Ahorro</x-import>
-              <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Badge" variant="brand" hint-size="auto,24px">Inversión</x-import>
-              <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Badge" variant="brand" hint-size="auto,24px">Pensiones</x-import>
-              <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Badge" variant="brand" hint-size="auto,24px">Ventajas fiscales</x-import>
+              <span class="mw-badge mw-badge--brand">Ahorro</span>
+              <span class="mw-badge mw-badge--brand">Inversión</span>
+              <span class="mw-badge mw-badge--brand">Pensiones</span>
+              <span class="mw-badge mw-badge--brand">Ventajas fiscales</span>
             </div>
           </div>
         </div>
@@ -102,12 +90,12 @@
 
   <!-- ============ EL PROBLEMA ============ -->
   <section id="problema" style="background:#fff">
-    <div style="max-width:1240px;margin:0 auto;padding:96px 24px">
+    <div class="mw-container" style="padding:96px 24px">
       <div style="max-width:680px;margin-bottom:48px">
-        <p style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green-600);margin:0 0 14px">El problema</p>
+        <p class="mw-eyebrow" style="color:var(--green-600)">El problema</p>
         <h2 style="font-size:40px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0;text-wrap:balance">El problema no es la falta de talento. Es el estrés financiero.</h2>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px">
+      <div class="problem-grid">
         <div style="background:var(--color-bg-subtle);border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:16px">
           <div>
             <div style="font-family:var(--font-mono);font-size:52px;font-weight:500;line-height:1;letter-spacing:-.03em;color:var(--green-900)">50%</div>
@@ -132,38 +120,38 @@
 
   <!-- ============ WHY IT MATTERS ============ -->
   <section id="producto" style="background:var(--surface-mint)">
-    <div style="max-width:1240px;margin:0 auto;padding:96px 24px">
+    <div class="mw-container" style="padding:96px 24px">
       <div style="max-width:680px;margin-bottom:18px">
-        <p style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green-600);margin:0 0 14px">Por qué importa</p>
+        <p class="mw-eyebrow" style="color:var(--green-600)">Por qué importa</p>
         <h2 style="font-size:40px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0">Beneficios para tu empresa.</h2>
       </div>
       <p style="font-size:19px;line-height:1.6;color:var(--text-body);margin:0 0 48px">MentorWallet convierte el bienestar financiero en un beneficio con impacto real para tus empleados: genera hábitos, confianza y tranquilidad de forma continua.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-        <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Card" padding="lg" hint-size="100%,240px">
+      <div class="benefits-grid">
+        <div class="mw-card mw-card--p-lg">
           <div style="width:48px;height:48px;border-radius:14px;background:var(--green-100);color:var(--green-700);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3 style="font-size:21px;font-weight:600;color:var(--text-strong);margin:0 0 10px;min-height:2.6em;display:flex;align-items:flex-start">Un beneficio que tus empleados realmente utilizan</h3>
           <p style="font-size:16px;line-height:1.55;color:var(--text-body);margin:0">A diferencia de otros beneficios corporativos, la salud financiera importa a todos. Sin importar el cargo, el sueldo ni la edad.</p>
-        </x-import>
-        <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Card" padding="lg" hint-size="100%,240px">
+        </div>
+        <div class="mw-card mw-card--p-lg">
           <div style="width:48px;height:48px;border-radius:14px;background:var(--green-100);color:var(--green-700);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
           <h3 style="font-size:21px;font-weight:600;color:var(--text-strong);margin:0 0 10px;min-height:2.6em;display:flex;align-items:flex-start">Empleados más productivos y focalizados</h3>
           <p style="font-size:16px;line-height:1.55;color:var(--text-body);margin:0">El estrés financiero distrae y agota. Cuando tu equipo controla su dinero, llega más concentrado y rinde más.</p>
-        </x-import>
-        <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Card" padding="lg" hint-size="100%,240px">
+        </div>
+        <div class="mw-card mw-card--p-lg">
           <div style="width:48px;height:48px;border-radius:14px;background:var(--green-100);color:var(--green-700);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <h3 style="font-size:21px;font-weight:600;color:var(--text-strong);margin:0 0 10px;min-height:2.6em;display:flex;align-items:flex-start">Mejora la retención y el compromiso</h3>
           <p style="font-size:16px;line-height:1.55;color:var(--text-body);margin:0">Los empleados valoran las empresas que cuidan su bienestar real. MentorWallet refuerza el vínculo con tu organización.</p>
-        </x-import>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FUNDAE ============ -->
   <section id="fundae" style="background:#fff">
-    <div style="max-width:1240px;margin:0 auto;padding:96px 24px">
+    <div class="mw-container" style="padding:96px 24px">
       <div style="display:grid;grid-template-columns:1fr;gap:64px">
         <div>
-          <p style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green-600);margin:0 0 14px">Bonificable por FUNDAE</p>
+          <p class="mw-eyebrow" style="color:var(--green-600)">Bonificable por FUNDAE</p>
           <h2 style="font-size:40px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0 0 18px">Recupera parte del coste. MentorWallet es bonificable por FUNDAE.</h2>
           <p style="font-size:18px;line-height:1.6;color:var(--text-body);margin:0 0 28px">Las empresas pueden recuperar total o parcialmente el coste de MentorWallet a través de las bonificaciones de FUNDAE. Más bienestar para tus empleados, menos coste para tu empresa.</p>
 
@@ -175,9 +163,9 @@
   <!-- ============ FINAL CTA / DEMO FORM ============ -->
   <section id="demo" style="background:#0D352E;color:var(--text-on-dark);position:relative;overflow:hidden">
     <svg viewBox="0 0 130 132" fill="currentColor" style="position:absolute;left:-80px;top:-100px;width:420px;height:auto;color:rgba(116,255,196,.06);pointer-events:none"><rect x="4" y="6" width="28" height="28" rx="8"></rect><rect x="51" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="6" width="28" height="28" rx="8"></rect><rect x="98" y="53" width="28" height="28" rx="8"></rect><rect x="98" y="100" width="28" height="28" rx="8"></rect></svg>
-    <div style="position:relative;max-width:1240px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:flex-start">
+    <div class="mw-container demo-grid" style="position:relative;padding:96px 24px">
       <div>
-        <p style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--fluor-300);margin:0 0 14px">Contacta con nosotros</p>
+        <p class="mw-eyebrow" style="color:var(--fluor-300)">Contacta con nosotros</p>
         <h2 style="font-size:42px;line-height:1.1;letter-spacing:-0.02em;font-weight:700;color:var(--mw-mint);margin:0 0 18px">Empieza a cuidar las finanzas de tu equipo.</h2>
         <p style="font-size:18px;line-height:1.6;color:var(--text-on-dark-muted);margin:0 0 28px">En una reunión de 20 minutos te enseñamos cómo funciona MentorWallet, el panel de RR. HH. y cómo podría implantarse en tu empresa.</p>
         <div style="display:flex;flex-direction:column;gap:14px">
@@ -189,44 +177,35 @@
       </div>
 
       <div style="background:#fff;border-radius:24px;padding:32px;box-shadow:0 28px 64px -12px rgba(7,33,28,.5)">
-        <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ true }}">
-          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px">
-            <div>
-              <label style="display:block;font-size:14px;font-weight:600;color:var(--text-strong);margin-bottom:6px">Nombre y apellidos</label>
-              <input required type="text" placeholder="María García" style="width:100%;padding:12px 14px;border:1.5px solid var(--border-default);border-radius:12px;font-family:var(--font-primary);font-size:16px;color:var(--text-strong);background:#fff" style-focus="border-color:var(--green-900);box-shadow:var(--focus-ring)">
-            </div>
-            <div>
-              <label style="display:block;font-size:14px;font-weight:600;color:var(--text-strong);margin-bottom:6px">Email corporativo</label>
-              <input required type="email" placeholder="nombre@empresa.com" style="width:100%;padding:12px 14px;border:1.5px solid var(--border-default);border-radius:12px;font-family:var(--font-primary);font-size:16px;color:var(--text-strong);background:#fff" style-focus="border-color:var(--green-900);box-shadow:var(--focus-ring)">
-            </div>
-            <div>
-              <label style="display:block;font-size:14px;font-weight:600;color:var(--text-strong);margin-bottom:6px">Empresa</label>
-              <input required type="text" placeholder="Tu empresa" style="width:100%;padding:12px 14px;border:1.5px solid var(--border-default);border-radius:12px;font-family:var(--font-primary);font-size:16px;color:var(--text-strong);background:#fff" style-focus="border-color:var(--green-900);box-shadow:var(--focus-ring)">
-            </div>
-            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
-              <input required type="checkbox" style="margin-top:3px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--green-900)">
-              <span style="font-size:13px;line-height:1.5;color:var(--text-body)">He leído y acepto la <a href="politica-privacidad.html" style="color:var(--green-800);text-decoration:underline">Política de Privacidad</a> y consiento el tratamiento de mis datos para atender mi solicitud de información.</span>
-            </label>
-            <x-import component-from-global-scope="MentorWalletDesignSystem_d69bb0.Button" variant="accent" size="lg" full-width="{{ true }}" type="submit" hint-size="100%,52px">Solicitar información</x-import>
-          </form>
-        </sc-if>
-        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-          <div style="text-align:center;padding:24px 8px">
-            <div style="width:60px;height:60px;border-radius:999px;background:var(--fluor-300);color:var(--green-900);display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:28px;height:28px"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <h3 style="font-size:24px;font-weight:600;color:var(--text-strong);margin:0 0 10px">¡Gracias! Hemos recibido tu solicitud.</h3>
-            <p style="font-size:16px;line-height:1.55;color:var(--text-body);margin:0">Nuestro equipo te escribirá en menos de 48 horas para agendar tu demo. Bienvenido a #MentorWallet.</p>
+        <form style="display:flex;flex-direction:column;gap:16px">
+          <div>
+            <label class="mw-label">Nombre y apellidos</label>
+            <input required type="text" placeholder="María García" class="mw-input">
           </div>
-        </sc-if>
+          <div>
+            <label class="mw-label">Email corporativo</label>
+            <input required type="email" placeholder="nombre@empresa.com" class="mw-input">
+          </div>
+          <div>
+            <label class="mw-label">Empresa</label>
+            <input required type="text" placeholder="Tu empresa" class="mw-input">
+          </div>
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
+            <input required type="checkbox" style="margin-top:3px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--green-900)">
+            <span style="font-size:13px;line-height:1.5;color:var(--text-body)">He leído y acepto la <a href="politica-privacidad.html" style="color:var(--green-800);text-decoration:underline">Política de Privacidad</a> y consiento el tratamiento de mis datos para atender mi solicitud de información.</span>
+          </label>
+          <button class="mw-btn mw-btn--accent mw-btn--lg mw-btn--full" type="submit"><span>Solicitar información</span></button>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- ============ POR QUÉ MENTORWALLET ============ -->
   <section style="background:#fff;border-bottom:1px solid var(--border-subtle)">
-    <div style="max-width:1240px;margin:0 auto;padding:72px 24px">
-      <p style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green-600);margin:0 0 14px">Credenciales</p>
+    <div class="mw-container" style="padding:72px 24px">
+      <p class="mw-eyebrow" style="color:var(--green-600)">Credenciales</p>
       <h2 style="font-size:36px;line-height:1.12;letter-spacing:-0.018em;font-weight:600;color:var(--text-strong);margin:0 0 40px">¿Por qué MentorWallet?</h2>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div class="credentials-grid">
         <div style="background:var(--surface-mint);border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:12px">
           <div style="width:40px;height:40px;border-radius:999px;background:var(--green-900);color:var(--fluor-300);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
           <p style="font-size:16px;line-height:1.55;color:var(--green-800);margin:0">Fundada por una profesional CFA® con más de 15 años de experiencia en banca privada.</p>
@@ -249,8 +228,8 @@
 
   <!-- ============ FOOTER ============ -->
   <footer style="background:#0D352E;color:var(--text-on-dark-muted)">
-    <div style="max-width:1240px;margin:0 auto;padding:64px 24px 40px">
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--border-on-dark)">
+    <div class="mw-container" style="padding:64px 24px 40px">
+      <div class="footer-grid">
         <div>
           <img src="assets/logo-green.jpg" alt="MentorWallet" style="height:75px;width:auto;margin-bottom:16px">
           <p style="font-size:15px;line-height:1.55;color:var(--text-on-dark-muted);max-width:30ch;margin:0">Educación financiera personalizada para tus empleados. Para que empiecen a dormir tranquilos.</p>
@@ -266,26 +245,12 @@
         </div>
       </div>
       <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;font-size:13px;color:var(--green-600)">
-        <span>© {{ year }} MentorWallet · www.mentorwallet.es</span>
+        <span>© 2026 MentorWallet · www.mentorwallet.es</span>
         <span style="color:var(--fluor-300);font-weight:600">#MentorWallet</span>
       </div>
     </div>
   </footer>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { sent: false };
-  renderVals() {
-    return {
-      sent: this.state.sent,
-      formOpen: !this.state.sent,
-      year: 2026,
-      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
-    };
-  }
-}
-</script>
 </body>
 </html>
