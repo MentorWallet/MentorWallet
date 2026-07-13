@@ -1,0 +1,163 @@
+/* ==========================================================================
+   MentorWallet — site.css
+   Estilos propios de la landing, construidos sobre los tokens del design
+   system (_ds/.../tokens/*.css, cargados vía styles.css).
+
+   Incluye además los estilos de los componentes del DS que la página usa
+   (Button, Badge, Card, StatCard). Antes los inyectaba en runtime el
+   _ds_bundle.js; al aplanar el sitio a HTML estático se sirven aquí,
+   verbatim desde la fuente del design system, para no depender del runtime.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Base de página
+   -------------------------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+body { background: #fff; }
+#top { overflow-x: hidden; }
+
+/* Contenedor central reutilizado por todas las secciones (el padding
+   vertical, propio de cada sección, se mantiene en línea). */
+.mw-container { max-width: 1240px; margin-inline: auto; }
+
+/* Enlace de navegación (cabecera + footer) */
+.mw-navlink { color: var(--mw-mint); font-size: 15px; font-weight: 500; text-decoration: none; opacity: .82; transition: opacity .14s; }
+.mw-navlink:hover { opacity: 1; text-decoration: none; }
+
+/* Etiqueta "overline" / eyebrow repetida en cada sección (el color, propio
+   de cada contexto, se mantiene en línea). */
+.mw-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; }
+
+/* Fila de check (icono + texto) usada en hero y en la sección de contacto */
+.mw-check { display: inline-flex; align-items: center; gap: 7px; }
+
+/* --------------------------------------------------------------------------
+   Formulario de contacto
+   -------------------------------------------------------------------------- */
+.mw-label { display: block; font-size: 14px; font-weight: 600; color: var(--text-strong); margin-bottom: 6px; }
+.mw-input {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--border-default); border-radius: 12px;
+  font-family: var(--font-primary); font-size: 16px;
+  color: var(--text-strong); background: #fff;
+}
+.mw-input:focus { outline: none; border-color: var(--green-900); box-shadow: var(--focus-ring); }
+
+/* --------------------------------------------------------------------------
+   Rejillas de las secciones
+   (F3 añadirá aquí las media queries para colapsar a 1 columna en móvil)
+   -------------------------------------------------------------------------- */
+.hero-grid        { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; }
+.panel-stats      { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.problem-grid     { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+.benefits-grid    { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.credentials-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.demo-grid        { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: flex-start; }
+.footer-grid      { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid var(--border-on-dark); }
+
+/* ==========================================================================
+   Componentes del design system usados en la página
+   (copiados verbatim de _ds_bundle.js — antes inyectados en runtime)
+   ========================================================================== */
+
+/* ---- Button (components/core/Button.jsx) ---- */
+.mw-btn {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-semibold);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-pill);
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard),
+              color var(--dur-fast) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-standard);
+}
+.mw-btn svg, .mw-btn i { width: 1.15em; height: 1.15em; display: inline-block; flex: 0 0 auto; }
+.mw-btn--full { width: 100%; }
+.mw-btn:active:not(:disabled) { transform: scale(0.985); }
+.mw-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.mw-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.mw-btn--sm { font-size: var(--fs-body-sm); padding: 8px 16px; }
+.mw-btn--md { font-size: var(--fs-body); padding: 12px 22px; }
+.mw-btn--lg { font-size: var(--fs-body-lg); padding: 15px 28px; }
+
+.mw-btn--primary { background: var(--color-primary); color: var(--color-primary-contrast); }
+.mw-btn--primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+.mw-btn--primary:active:not(:disabled) { background: var(--color-primary-active); }
+
+.mw-btn--accent { background: var(--color-accent); color: var(--color-accent-contrast); }
+.mw-btn--accent:hover:not(:disabled) { background: var(--color-accent-hover); }
+.mw-btn--accent:active:not(:disabled) { background: var(--color-accent-active); }
+
+.mw-btn--secondary { background: transparent; border-color: var(--border-strong); color: var(--text-strong); }
+.mw-btn--secondary:hover:not(:disabled) { background: var(--green-50); }
+
+.mw-btn--ghost { background: transparent; color: var(--text-strong); }
+.mw-btn--ghost:hover:not(:disabled) { background: var(--neutral-100); }
+
+.mw-btn--danger { background: var(--status-negative); color: #fff; }
+.mw-btn--danger:hover:not(:disabled) { filter: brightness(0.94); }
+
+/* ---- Badge (components/core/Badge.jsx) ---- */
+.mw-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-primary); font-weight: var(--fw-semibold);
+  font-size: var(--fs-caption); line-height: 1;
+  padding: 5px 10px; border-radius: var(--radius-pill); white-space: nowrap;
+}
+.mw-badge svg, .mw-badge i { width: 1.05em; height: 1.05em; }
+.mw-badge--dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.mw-badge--neutral  { background: var(--neutral-100); color: var(--neutral-700); }
+.mw-badge--brand    { background: var(--green-100); color: var(--green-800); }
+.mw-badge--accent   { background: var(--fluor-300); color: var(--green-900); }
+.mw-badge--positive { background: var(--status-positive-surface); color: var(--status-positive); }
+.mw-badge--warning  { background: var(--status-warning-surface); color: var(--status-warning); }
+.mw-badge--negative { background: var(--status-negative-surface); color: var(--status-negative); }
+.mw-badge--info     { background: var(--status-info-surface); color: var(--status-info); }
+
+/* ---- Card (components/core/Card.jsx) ---- */
+.mw-card {
+  border-radius: var(--radius-card);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+  transition: box-shadow var(--dur-base) var(--ease-standard), transform var(--dur-base) var(--ease-standard);
+}
+.mw-card--p-sm { padding: var(--space-4); }
+.mw-card--p-md { padding: var(--space-6); }
+.mw-card--p-lg { padding: var(--space-8); }
+.mw-card--mint   { background: var(--surface-mint); box-shadow: none; }
+.mw-card--sky    { background: var(--color-bg-sky); box-shadow: none; }
+.mw-card--dark   { background: var(--surface-inverse); box-shadow: none; color: var(--text-on-dark); }
+.mw-card--outline { background: var(--surface-card); box-shadow: none; border-color: var(--border-subtle); }
+.mw-card--interactive { cursor: pointer; }
+.mw-card--interactive:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.mw-card--interactive:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* ---- StatCard (components/core/StatCard.jsx) ---- */
+.mw-stat { border-radius: var(--radius-card); padding: var(--space-6); background: var(--surface-card); box-shadow: var(--shadow-sm); }
+.mw-stat--dark { background: var(--surface-inverse); box-shadow: none; }
+.mw-stat__top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.mw-stat__label { font-family: var(--font-primary); font-size: var(--fs-body-sm); font-weight: var(--fw-medium); color: var(--text-muted); }
+.mw-stat--dark .mw-stat__label { color: var(--text-on-dark-muted); }
+.mw-stat__ico { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--green-50); color: var(--green-700); }
+.mw-stat--dark .mw-stat__ico { background: rgba(116,255,196,.14); color: var(--fluor-300); }
+.mw-stat__ico svg, .mw-stat__ico i { width: 19px; height: 19px; }
+.mw-stat__value { font-family: var(--font-mono); font-weight: 500; font-size: var(--fs-h1); color: var(--text-strong); letter-spacing: -0.02em; margin-top: var(--space-4); line-height: 1.1; white-space: nowrap; }
+.mw-stat--sm { padding: var(--space-4); }
+.mw-stat--sm .mw-stat__value { font-size: var(--fs-h3); margin-top: var(--space-3); }
+.mw-stat--dark .mw-stat__value { color: var(--mw-mint); }
+.mw-stat__delta { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-primary); font-weight: var(--fw-semibold); font-size: var(--fs-body-sm); margin-top: var(--space-2); }
+.mw-stat__delta svg, .mw-stat__delta i { width: 15px; height: 15px; }
+.mw-stat__delta--up { color: var(--status-positive); }
+.mw-stat__delta--down { color: var(--status-negative); }
+.mw-stat__delta--flat { color: var(--text-muted); }
+.mw-stat__caption { font-family: var(--font-primary); font-size: var(--fs-caption); color: var(--text-muted); margin-left: 4px; }
