@@ -10,12 +10,11 @@
 /* --- DM Sans + DM Mono (Google Fonts) — @import must precede @font-face --- */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..700&family=DM+Mono:wght@400;500&display=swap');
 
-/* --- Fustat (self-hosted; paths relative to this file in tokens/) -------- */
-@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 200; font-display: swap; src: url('../assets/fonts/Fustat-ExtraLight.ttf') format('truetype'); }
-@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 300; font-display: swap; src: url('../assets/fonts/Fustat-Light.ttf') format('truetype'); }
-@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/Fustat-Regular.ttf') format('truetype'); }
-@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 500; font-display: swap; src: url('../assets/fonts/Fustat-Medium.ttf') format('truetype'); }
-@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 600; font-display: swap; src: url('../assets/fonts/Fustat-SemiBold.ttf') format('truetype'); }
-@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/Fustat-Bold.ttf') format('truetype'); }
-@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 800; font-display: swap; src: url('../assets/fonts/Fustat-ExtraBold.ttf') format('truetype'); }
+/* --- Fustat (self-hosted, WOFF2 subseteado a latin; paths relativos a este
+   fichero en tokens/). Solo los pesos que usa el sitio: 400/500/600/700.
+   Los .ttf y los pesos 200/300/800 se eliminaron del deploy (PERF-01). ------ */
+@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/Fustat-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 500; font-display: swap; src: url('../assets/fonts/Fustat-Medium.woff2') format('woff2'); }
+@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 600; font-display: swap; src: url('../assets/fonts/Fustat-SemiBold.woff2') format('woff2'); }
+@font-face { font-family: 'Fustat'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/Fustat-Bold.woff2') format('woff2'); }
 

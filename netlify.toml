@@ -1,2 +1,49 @@
 [build]
   publish = "public"
+
+# ==========================================================================
+# Cabeceras de caché (PERF-04)
+# Nota: los CSS/JS no llevan hash en el nombre (no hay build step), por eso NO
+# se marcan como "immutable" — usamos caché corta con revalidación para no
+# servir estilos obsoletos. Solo las fuentes .woff2 (contenido estable) van
+# como immutable. El HTML usa la caché corta por defecto de Netlify.
+# ==========================================================================
+
+# Design system (tokens CSS, styles.css): 1 día + revalidación.
+[[headers]]
+  for = "/_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# Fuentes WOFF2: inmutables 1 año (regla posterior => prevalece sobre la de _ds).
+[[headers]]
+  for = "/_ds/mentorwallet-design-system-d69bb06c-4271-4dff-93a1-c3602fbb6af3/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS y JS propios del sitio: 1 día + revalidación.
+[[headers]]
+  for = "/site.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# Imágenes, iconos y OG: 30 días.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
