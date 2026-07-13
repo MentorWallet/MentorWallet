@@ -3,10 +3,10 @@
 Sitio web estático de MentorWallet. HTML servido tal cual (sin build step) y
 desplegado de forma continua en **Netlify** desde `main`.
 
-> Nota: en el estado actual las páginas todavía se renderizan en cliente con un
-> runtime propietario (`support.js` + `_ds_bundle.js`, React desde CDN). El plan
-> de trabajo contempla aplanarlas a HTML estático puro; hasta entonces esos
-> ficheros siguen formando parte del deploy.
+Las páginas son **HTML estático puro** (pre-renderizado): no hay runtime de
+cliente, ni React, ni evaluación de plantillas en el navegador. Solo se sirven
+HTML, CSS (tokens del DS + `site.css`), fuentes y un pequeño script de primera
+parte para la mejora progresiva del formulario.
 
 ## Estructura del repositorio
 
@@ -16,13 +16,15 @@ desplegado de forma continua en **Netlify** desde `main`.
 ├── README.md
 ├── public/                 # ← Directorio publicado (raíz del sitio en Netlify)
 │   ├── index.html
+│   ├── gracias.html        # Página de éxito del formulario (fallback sin JS)
 │   ├── aviso-legal.html
 │   ├── politica-cookies.html
 │   ├── politica-privacidad.html
-│   ├── support.js          # Runtime "dc" (temporal, ver plan de flatten)
+│   ├── site.css            # Estilos propios sobre los tokens del DS
+│   ├── js/form.js          # Mejora progresiva del formulario (Netlify Forms)
 │   ├── _redirects          # Reglas de redirección de Netlify
 │   ├── assets/             # Logo, símbolo SVG
-│   └── _ds/                # Design system: tokens CSS, fuentes Fustat, bundle
+│   └── _ds/                # Design system: tokens CSS y fuentes Fustat
 └── docs/                   # Material NO publicado (fuera del deploy)
     ├── design-system/      # readme, manifest y adherence del DS
     ├── legal-source/       # JSON fuente de los textos legales
@@ -38,9 +40,32 @@ no debe formar parte del sitio desplegado.
 
 Los tokens de color, tipografía (Fustat), spacing y componentes están en
 `public/_ds/mentorwallet-design-system-.../`. El punto de entrada de estilos es
-`styles.css`, que importa los ficheros de `tokens/`. **Antes de modificar
-cualquier archivo del design system**, verifica que no rompes rutas relativas ni
-referencias usadas en runtime.
+`styles.css`, que importa los ficheros de `tokens/`. Los estilos de los
+componentes del DS que la landing usa (Button, Badge, Card, StatCard) están
+copiados en `public/site.css`. **Antes de modificar cualquier archivo del design
+system**, verifica que no rompes rutas relativas.
+
+## Formulario de contacto (Netlify Forms)
+
+El formulario de la home usa **Netlify Forms**:
+
+- El `<form name="contacto-empresas" data-netlify="true">` incluye un campo
+  oculto `form-name` y un honeypot `bot-field` (anti-spam).
+- **Sin JavaScript**: el formulario hace POST nativo y Netlify redirige a
+  `gracias.html`.
+- **Con JavaScript** (`js/form.js`, mejora progresiva): el envío se hace por
+  `fetch` y se muestran estados reales (enviando / éxito solo tras HTTP 200 /
+  error con reintento) sin recargar la página.
+
+### Paso manual en el panel de Netlify (obligatorio)
+
+Netlify solo detecta el formulario **tras el primer deploy** que contenga el
+HTML. Después, configurar la **notificación por email de nuevos envíos**:
+
+> Site settings → **Forms** → Form notifications → *Add notification* →
+> **Email notification** → enviar a `info@mentorwallet.es`.
+
+Esto no se puede fijar desde el repositorio; es configuración del panel.
 
 ## Despliegue
 
