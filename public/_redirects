@@ -1,5 +1,6 @@
-# Dominio canónico: apex -> www (301)
-https://mentorwallet.es/*   https://www.mentorwallet.es/:splat   301!
+# Canonicalización de dominio (apex <-> www): la gestiona Netlify mediante el
+# "primary domain" en Domain management. NO se fuerza aquí para no entrar en
+# bucle de redirección con la redirección automática de Netlify.
 
 # URLs limpias: 301 desde la versión .html a la versión sin extensión
 /index.html                 /                        301!
