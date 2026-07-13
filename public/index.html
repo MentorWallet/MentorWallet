@@ -177,25 +177,33 @@
       </div>
 
       <div style="background:#fff;border-radius:24px;padding:32px;box-shadow:0 28px 64px -12px rgba(7,33,28,.5)">
-        <form style="display:flex;flex-direction:column;gap:16px">
+        <form id="contact-form" name="contacto-empresas" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html" style="display:flex;flex-direction:column;gap:16px">
+          <input type="hidden" name="form-name" value="contacto-empresas">
+          <p class="mw-hp" hidden><label>No rellenes este campo si eres humano: <input name="bot-field"></label></p>
           <div>
-            <label class="mw-label">Nombre y apellidos</label>
-            <input required type="text" placeholder="María García" class="mw-input">
+            <label class="mw-label" for="nombre">Nombre y apellidos</label>
+            <input required type="text" name="nombre" id="nombre" autocomplete="name" placeholder="María García" class="mw-input">
           </div>
           <div>
-            <label class="mw-label">Email corporativo</label>
-            <input required type="email" placeholder="nombre@empresa.com" class="mw-input">
+            <label class="mw-label" for="email">Email corporativo</label>
+            <input required type="email" name="email" id="email" autocomplete="email" placeholder="nombre@empresa.com" class="mw-input">
           </div>
           <div>
-            <label class="mw-label">Empresa</label>
-            <input required type="text" placeholder="Tu empresa" class="mw-input">
+            <label class="mw-label" for="empresa">Empresa</label>
+            <input required type="text" name="empresa" id="empresa" autocomplete="organization" placeholder="Tu empresa" class="mw-input">
           </div>
           <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
-            <input required type="checkbox" style="margin-top:3px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--green-900)">
+            <input required type="checkbox" name="privacidad" id="privacidad" style="margin-top:3px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--green-900)">
             <span style="font-size:13px;line-height:1.5;color:var(--text-body)">He leído y acepto la <a href="politica-privacidad.html" style="color:var(--green-800);text-decoration:underline">Política de Privacidad</a> y consiento el tratamiento de mis datos para atender mi solicitud de información.</span>
           </label>
-          <button class="mw-btn mw-btn--accent mw-btn--lg mw-btn--full" type="submit"><span>Solicitar información</span></button>
+          <p id="form-error" role="alert" hidden style="font-size:14px;line-height:1.5;color:var(--status-negative);background:var(--status-negative-surface);border-radius:12px;padding:12px 14px;margin:0">No hemos podido enviar tu solicitud. Revisa tu conexión e inténtalo de nuevo.</p>
+          <button id="contact-submit" class="mw-btn mw-btn--accent mw-btn--lg mw-btn--full" type="submit"><span>Solicitar información</span></button>
         </form>
+        <div id="form-success" hidden style="text-align:center;padding:24px 8px">
+          <div style="width:60px;height:60px;border-radius:999px;background:var(--fluor-300);color:var(--green-900);display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:28px;height:28px"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3 style="font-size:24px;font-weight:600;color:var(--text-strong);margin:0 0 10px">¡Gracias! Hemos recibido tu solicitud.</h3>
+          <p style="font-size:16px;line-height:1.55;color:var(--text-body);margin:0">Nuestro equipo te escribirá en menos de 48 horas para agendar tu demo. Bienvenido a #MentorWallet.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -241,7 +249,7 @@
 
         <div>
           <div style="font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green-300);margin-bottom:14px">Contacto</div>
-          <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--text-on-dark-muted)"><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:var(--text-on-dark)">Patricia Fitzgerald, CFA®</span><span>Founder</span></span><a class="mw-navlink" href="tel:+34678987987" style="opacity:.85">+34 681 314 109</a><a class="mw-navlink" href="mailto:info@mentorwallet.es" style="opacity:.85">info@mentorwallet.es</a></div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--text-on-dark-muted)"><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:var(--text-on-dark)">Patricia Fitzgerald, CFA®</span><span>Founder</span></span><a class="mw-navlink" href="tel:+34681314109" style="opacity:.85">+34 681 314 109</a><a class="mw-navlink" href="mailto:info@mentorwallet.es" style="opacity:.85">info@mentorwallet.es</a></div>
         </div>
       </div>
       <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;font-size:13px;color:var(--green-600)">
@@ -252,5 +260,6 @@
   </footer>
 
 </div>
+<script src="js/form.js" defer></script>
 </body>
 </html>
